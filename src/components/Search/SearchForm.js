@@ -35,7 +35,7 @@ function SearchForm({ onSearch }) {
   const [isArabic, setIsArabic] = useState(false); // State to check if the input is Arabic
   const [loading, setLoading] = useState(false); // State for loading status
   const dispatch = useDispatch();
-
+const API_URL = "http://146.190.140.19:5000"
   // Predefined 10 neighborhoods
   const existingNeighborhoods = [
     "المحمدية",
@@ -76,7 +76,7 @@ function SearchForm({ onSearch }) {
     try {
       // Fetch data from the server with activity as a parameter
       const response = await axios.get(
-        `http://localhost:5000/neighborhood/${encodeURIComponent(
+        `${API_URL}/neighborhood/${encodeURIComponent(
           neighborhood
         )}`,
         {
