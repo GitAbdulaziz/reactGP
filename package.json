@@ -84,8 +84,8 @@
   "target": "web",
   "scripts": {
     "start": "node --max-old-space-size=512 backend/server.js",
-    "server": "node --max-old-space-size=512 backend/server.js",
-    "server2": "node --max-old-space-size=512 backend/server2.js",
+   "server": "node backend/server.js",
+  "server2": "node backend/server2.js",
     "build": "cross-env PUBLIC_URL=/ cross-env CI=false react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
