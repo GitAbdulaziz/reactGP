@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+/* General Gradient Background */
+.gradientBackground {
+  position: relative;
+  height: 100vh;
+  /* width: 100vw; */
+  display: flex;
+  justify-content: space-between; 
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  overflow: hidden; 
+}
+
+
+
+/* Content Container: Flexbox for Text and Spline */
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 2000px; 
+  padding: 20px;
+  overflow: visible; 
+}
+
+.textContainer {
+  position: absolute;
+  top: 50%; 
+  left: 5%; 
+  transform: translateY(-50%); 
+  text-align: left; 
+}
+
+
+/* Arabic Heading */
+.arabicHeading {
+  font-size: 4rem;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  direction: rtl;
+  text-align: left;
+}
+
+/* Arabic Subheading */
+.arabicSubheading {
+  font-size: 1.8rem;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* English Heading */
+.englishHeading {
+  font-size: 3.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* English Subheading */
+.englishSubheading {
+  font-size: 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Button Gradient Styling */
+.btnGrad {
+  margin-top: 1.5rem;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.btnGrad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Spline Container: Ensure Full Visibility */
+.splineContainer {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  max-width: none; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  overflow: visible;
+  position: relative; 
+  transform: scale(1.2); 
+  right: -35%;
+
+}
+

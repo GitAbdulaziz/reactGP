@@ -1,0 +1,8 @@
+.env
+# Ignore environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+node_modules/

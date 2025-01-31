@@ -1,0 +1,38 @@
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0;
+  }
+  
+  .result-item {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .result-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #ffffff;
+  }
+  
+  .result-item p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #aaaaaa;
+  }
+  
+  .result-item img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+   
+
+  

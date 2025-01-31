@@ -1,0 +1,58 @@
+/* About.css */
+
+/* Background wrapper */
+.about-page {
+  background: url("../assets/img/background-body-admin.png") no-repeat center center;
+  background-size: cover;
+
+  min-height: 100vh;       
+  display: flex;
+  align-items: center;      
+  justify-content: center;  
+  text-align: center;       
+  padding: 40px;            
+}
+
+/* Main content container */
+.about-container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  color: #ffffff;
+}
+
+/* Headings */
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+/* Paragraphs */
+.about-container p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Button */
+.contact-button {
+  background-color: #2e3192; 
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #4b53bc; 
+}
