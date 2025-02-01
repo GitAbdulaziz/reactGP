@@ -35,7 +35,7 @@ function SearchForm({ onSearch }) {
   const [isArabic, setIsArabic] = useState(false); // State to check if the input is Arabic
   const [loading, setLoading] = useState(false); // State for loading status
   const dispatch = useDispatch();
-const API_URL = "http://146.190.140.19:5000"
+const API_URL = "http://www.businessmap.info/"
   // Predefined 10 neighborhoods
   const existingNeighborhoods = [
     "المحمدية",
@@ -92,7 +92,7 @@ const API_URL = "http://146.190.140.19:5000"
       // Update Redux store
       dispatch(setSelectedNeighborhood(neighborhood));
       dispatch(setDashboardData(response.data));
-
+      
       // Save search data to Firestore if the user is logged in
       const currentUser = auth.currentUser;
       if (currentUser) {
