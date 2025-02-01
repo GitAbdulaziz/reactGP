@@ -6,7 +6,7 @@ import { neighborhoods as allNeighborhoods } from "../Neighborhoods/Neighborhood
 import axios from "axios";
 import { auth, db } from "../../firebase/firebaseConfig"; // Firebase imports
 import { collection, addDoc, Timestamp } from "firebase/firestore"; // Firestore utilities
-const API_URL = "147.182.240.205"
+const API_URL = "http://147.182.240.205"
 
 // Scraping Function (background execution without waiting for response)
 const scrapeData = (neighborhoodName, dateRange = "365") => {
@@ -22,7 +22,7 @@ const scrapeData = (neighborhoodName, dateRange = "365") => {
       return response.json();
     })
     .then((data) => {
-      // console.log(`Scraping completed for ${neighborhoodName}:`, data);
+      //  console.log(`Scraping completed for ${neighborhoodName}:`, data); 
     })
     .catch((error) => {
       console.error("Error fetching data in background:", error.message);
