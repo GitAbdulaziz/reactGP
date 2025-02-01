@@ -6,10 +6,11 @@ import { neighborhoods as allNeighborhoods } from "../Neighborhoods/Neighborhood
 import axios from "axios";
 import { auth, db } from "../../firebase/firebaseConfig"; // Firebase imports
 import { collection, addDoc, Timestamp } from "firebase/firestore"; // Firestore utilities
+const API_URL = "https://api.businessmap.info"
 
 // Scraping Function (background execution without waiting for response)
 const scrapeData = (neighborhoodName, dateRange = "365") => {
-  fetch("http://localhost:5500/scrape", {
+  fetch("https://api.businessmap.info/scrape", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ neighborhoodName, dateRange }),
@@ -35,7 +36,6 @@ function SearchForm({ onSearch }) {
   const [isArabic, setIsArabic] = useState(false); // State to check if the input is Arabic
   const [loading, setLoading] = useState(false); // State for loading status
   const dispatch = useDispatch();
-const API_URL = "https://api.businessmap.info"
   // Predefined 10 neighborhoods
   const existingNeighborhoods = [
     "المحمدية",
