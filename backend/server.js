@@ -79,5 +79,5 @@ sql
     console.log("Error stack trace:", err.stack); // Debugging database connection errors
   });
 
-const PORT = 5000;
+const PORT = 4000;
 app.listen(PORT);
