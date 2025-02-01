@@ -157,10 +157,10 @@ const HomePage = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Spline
+            {/* <Spline
               scene="https://prod.spline.design/I1sHrJ9Mx-W8X3oC/scene.splinecode"
               className="responsive-spline jumping-object"
-            />
+            /> */}
           </Box>
         </Flex>
       </Box>
