@@ -83,7 +83,8 @@ function SearchForm({ onSearch }) {
           params: { activity },
         }
       );
-      // console.log("Search Response:", response.data);
+    
+      console.log("Search Response:", response);
 
       if (onSearch) {
         onSearch(neighborhood, activity);
