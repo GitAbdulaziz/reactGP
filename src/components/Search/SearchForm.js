@@ -76,7 +76,7 @@ function SearchForm({ onSearch }) {
     try {
       // Fetch data from the server with activity as a parameter
       const response = await axios.get(
-        `${API_URL}/neighborhood/${encodeURIComponent(
+        `${API_URL}:5000/neighborhood/${encodeURIComponent(
           neighborhood
         )}`,
         {
