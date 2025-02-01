@@ -22,7 +22,7 @@ const scrapeData = (neighborhoodName, dateRange = "365") => {
       return response.json();
     })
     .then((data) => {
-      //  console.log(`Scraping completed for ${neighborhoodName}:`, data); 
+      // console.log(`Scraping completed for ${neighborhoodName}:`, data);
     })
     .catch((error) => {
       console.error("Error fetching data in background:", error.message);
@@ -76,15 +76,14 @@ function SearchForm({ onSearch }) {
     try {
       // Fetch data from the server with activity as a parameter
       const response = await axios.get(
-        `${API_URL}:5000/neighborhood/${encodeURIComponent(
+        `${API_URL}/neighborhood/${encodeURIComponent(
           neighborhood
         )}`,
         {
           params: { activity },
         }
       );
-    
-      console.log("Search Response:", response);
+      // console.log("Search Response:", response.data);
 
       if (onSearch) {
         onSearch(neighborhood, activity);
