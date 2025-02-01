@@ -35,7 +35,7 @@ function SearchForm({ onSearch }) {
   const [isArabic, setIsArabic] = useState(false); // State to check if the input is Arabic
   const [loading, setLoading] = useState(false); // State for loading status
   const dispatch = useDispatch();
-const API_URL = "http://www.businessmap.info/"
+const API_URL = "https://api.businessmap.info"
   // Predefined 10 neighborhoods
   const existingNeighborhoods = [
     "المحمدية",
