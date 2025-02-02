@@ -165,8 +165,8 @@ const HomePage = () => {
         </Flex>
       </Box>
 
-      <WhiteSection />
-      <Overview />
+      {/* <WhiteSection />
+      <Overview /> */}
       <Footer />
     </>
   );
