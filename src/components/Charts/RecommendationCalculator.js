@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 
 class RecommendationCalculator {
   constructor(dashboardData, results) {
