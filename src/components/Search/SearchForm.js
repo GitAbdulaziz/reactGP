@@ -6,11 +6,11 @@ import { neighborhoods as allNeighborhoods } from "../Neighborhoods/Neighborhood
 import axios from "axios";
 import { auth, db } from "../../firebase/firebaseConfig"; // Firebase imports
 import { collection, addDoc, Timestamp } from "firebase/firestore"; // Firestore utilities
-const API_URL = "http://147.182.238.194"
+const API_URL = "https://147.182.238.194"
 
 // Scraping Function (background execution without waiting for response)
 const scrapeData = (neighborhoodName, dateRange = "365") => {
-  fetch("http://147.182.238.194:5500/scrape", {
+  fetch("https://147.182.238.194:5500/scrape", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ neighborhoodName, dateRange }),
