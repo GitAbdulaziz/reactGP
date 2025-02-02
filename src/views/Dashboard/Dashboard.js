@@ -65,6 +65,9 @@ export default function Dashboard() {
     (state) => state.app.selectedNeighborhood
   );
 
+  const selectedActivity = useSelector(
+    (state) => state.app.selectedActivity
+  );
   const history = useHistory();
 
   useEffect(() => {
@@ -169,6 +172,9 @@ export default function Dashboard() {
     
     
 
+
+
+      
   useEffect(() => {
     if (window.google && center) {
       const map = new window.google.maps.Map(document.getElementById("map"), {
@@ -214,11 +220,11 @@ export default function Dashboard() {
                 <Text
                   as="span"
                   textDecoration="underline"
-                  color="teal.300"
+                  color="blue.300"
                   cursor="pointer"
                   onClick={() => history.push("/admin/locations")} // Redirect to Locations page
                 >
-                  {markers.length} نتائج
+                  {markers.length} نتائج  ({selectedActivity})
                 </Text>
               </Text>
               <Flex align="center">
@@ -711,7 +717,6 @@ export default function Dashboard() {
             />
             <Text fontSize="sm" color="gray.400" fontWeight="normal">
               <Text fontWeight="bold" as="span">
-                قطاع11
               </Text>
             </Text>
           </Flex>
