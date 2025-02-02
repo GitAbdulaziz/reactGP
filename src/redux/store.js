@@ -16,11 +16,12 @@ const userSlice = createSlice({
   },
 });
 
-// Create a slice for neighborhood and dashboard data
+// Create a slice for app state, including activity
 const appSlice = createSlice({
   name: "app",
   initialState: {
     selectedNeighborhood: "",
+    selectedActivity: "", // New state for selected activity
     dashboardData: null,
     results: [], 
     center: { lat: 24.7136, lng: 46.6753 }, 
@@ -31,6 +32,9 @@ const appSlice = createSlice({
   reducers: {
     setSelectedNeighborhood: (state, action) => {
       state.selectedNeighborhood = action.payload;
+    },
+    setSelectedActivity: (state, action) => { // New reducer to handle activity selection
+      state.selectedActivity = action.payload;
     },
     setDashboardData: (state, action) => {
       state.dashboardData = action.payload;
@@ -43,6 +47,7 @@ const appSlice = createSlice({
     },
     resetAppState: (state) => {
       state.selectedNeighborhood = "";
+      state.selectedActivity = ""; // Reset activity when resetting app state
       state.dashboardData = null;
       state.results = [];
       state.center = { lat: 24.7136, lng: 46.6753 }; 
@@ -71,9 +76,10 @@ const appSlice = createSlice({
 // Export userSlice actions
 export const { setUser, clearUser } = userSlice.actions;
 
-// Export appSlice actions
+// Export appSlice actions, including activity
 export const {
   setSelectedNeighborhood,
+  setSelectedActivity, // Exporting new action
   setDashboardData,
   setResults,
   setCenter,
