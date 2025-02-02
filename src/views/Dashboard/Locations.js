@@ -37,7 +37,9 @@ function Locations() {
   const center = useSelector((state) => state.app.center);
   const results = useSelector((state) => state.app.results);
   const selectedNeighborhood = useSelector((state) => state.app.selectedNeighborhood);
-
+  const selectedActivity = useSelector(
+    (state) => state.app.selectedActivity
+  );
   const handleImageClick = (imageUrl) => {
     setCurrentImage(imageUrl);
     onOpen();
@@ -85,7 +87,7 @@ function Locations() {
         cursor="pointer"
         onClick={() => history.push("/locations")} // Redirect to Locations page
       >
-        {results.length} نتائج
+        {results.length} نتائج  ({selectedActivity})
       </Text>
     </Text>
             <Flex align="center">
