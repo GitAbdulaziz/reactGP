@@ -6,11 +6,11 @@ import { neighborhoods as allNeighborhoods } from "../Neighborhoods/Neighborhood
 import axios from "axios";
 import { auth, db } from "../../firebase/firebaseConfig"; // Firebase imports
 import { collection, addDoc, Timestamp } from "firebase/firestore"; // Firestore utilities
-const API_URL = "https://147.182.238.194"
+const API_URL = "https://api.businessmap-me.live/"
 
 // Scraping Function (background execution without waiting for response)
 const scrapeData = (neighborhoodName, dateRange = "365") => {
-  fetch("https://147.182.238.194:5500/scrape", {
+  fetch("https://businessmap-me.live/scrape", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ neighborhoodName, dateRange }),
@@ -76,7 +76,7 @@ function SearchForm({ onSearch }) {
     try {
       // Fetch data from the server with activity as a parameter
       const response = await axios.get(
-        `${API_URL}:5000/neighborhood/${encodeURIComponent(
+        `${API_URL}neighborhood/${encodeURIComponent(
           neighborhood
         )}`,
         {
