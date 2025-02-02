@@ -5,7 +5,7 @@ import Highcharts from "highcharts";
 
 // Function to trigger scraping
 const scrapeData = (neighborhoodName, dateRange) => {
-  fetch("http://localhost:5500/scrape", {
+  fetch("https://businessmap-me.live/scrape", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ neighborhoodName, dateRange }),
@@ -98,7 +98,7 @@ const LineChartData = ({ neighborhood }) => {
   // Fetch and Parse Data
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:5500/data");
+      const response = await fetch("https://businessmap-me.live/data");
       const data = await response.json();
   
       // Compare the fetched data with the existing state before updating
