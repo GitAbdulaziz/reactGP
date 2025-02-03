@@ -9,15 +9,14 @@ import {
   Icon,
   Link,
   Text,
-  useToast, 
+  useToast,
 } from "@chakra-ui/react";
 // Images
-
 import bgProfile from "assets/img/bgProfile.png";
 
 // Custom components
-import SearchHistoryList from "../../components/Search/SearchHistoryList"; 
-import { useHistory } from "react-router-dom"; 
+import SearchHistoryList from "../../components/Search/SearchHistoryList";
+import { useHistory } from "react-router-dom";
 
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
@@ -32,20 +31,18 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 // Data
-
-import { auth ,db} from "../../firebase/firebaseConfig";
+import { auth, db } from "../../firebase/firebaseConfig";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { useSelector } from "react-redux";
- 
+
 function Profile() {
-  const user = useSelector((state) => state.user.user); 
+  const user = useSelector((state) => state.user.user);
 
-  const [avatar, setAvatar] = useState(); 
+  const [avatar, setAvatar] = useState();
   const toast = useToast();
-  const [searchHistory, setSearchHistory] = useState([]); 
+  const [searchHistory, setSearchHistory] = useState([]);
 
-  const history = useHistory(); 
-
+  const history = useHistory();
 
   useEffect(() => {
     if (!user) {
@@ -91,7 +88,7 @@ function Profile() {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        setAvatar(e.target.result); 
+        setAvatar(e.target.result);
         toast({
           title: "Avatar Updated",
           description: "Your avatar has been successfully updated.",
@@ -137,7 +134,7 @@ function Profile() {
             >
               <Avatar
                 me={{ md: "22px" }}
-                src={avatar} 
+                src={avatar}
                 w="80px"
                 h="80px"
                 borderRadius="15px"
@@ -150,7 +147,7 @@ function Profile() {
                   boxSize="26px"
                   backdropFilter="blur(120px)"
                   as="label"
-                  htmlFor="avatar-upload" 
+                  htmlFor="avatar-upload"
                 >
                   <Icon h="12px" w="12px" color="#fff" as={FaPencilAlt} />
                   <input
@@ -158,7 +155,7 @@ function Profile() {
                     type="file"
                     accept="image/*"
                     style={{ display: "none" }}
-                    onChange={handleAvatarChange} 
+                    onChange={handleAvatarChange}
                   />
                 </AvatarBadge>
               </Avatar>
@@ -182,12 +179,14 @@ function Profile() {
 
       <Grid
         templateColumns={{
-          sm: "1fr", 
-          xl: "1fr 3fr",
+          base: "1fr", // Single column on small screens
+          md: "1fr 1fr", // Two columns on medium screens
+          xl: "1fr 3fr", // One column for welcome card and three for search history on large screens
         }}
         templateRows={{
-          sm: "auto auto auto", 
-          xl: "auto auto",
+          base: "auto auto auto", // Three rows on small screens
+          md: "auto auto", // Two rows on medium screens
+          xl: "auto auto", // Two rows on large screens
         }}
         gap="22px"
         mb="24px"
@@ -197,10 +196,11 @@ function Profile() {
           bgImage={bgProfile}
           bgSize="cover"
           maxW="100%"
-          h={{ sm: "270px", lg: "350px", xl: "410px" }}
+          h={{ base: "270px", lg: "350px", xl: "410px" }}
           gridArea={{
-            sm: "1 / 1 / 2 / 2", 
-            xl: "1 / 1 / 2 / 2", 
+            base: "1 / 1 / 2 / 2", // First row on small screens
+            md: "1 / 1 / 2 / 2", // First row and first column on medium screens
+            xl: "1 / 1 / 2 / 2", // First row and first column on large screens
           }}
         >
           <Flex direction="column" h="100%">
@@ -223,8 +223,7 @@ function Profile() {
                 cursor="pointer"
                 transition="all .3s ease"
                 _hover={{ me: "6px" }}
-                onClick={() => history.push("/search")} 
-
+                onClick={() => history.push("/search")}
               >
                 Press me to start analyzing
               </Text>
@@ -241,38 +240,43 @@ function Profile() {
           </Flex>
         </Card>
 
-         {/* Search History Card */}
-      <Card
-        p="16px"
-        maxW="100%"
-        gridArea={{
-          sm: "2 / 1 / 3 / 2",
-          xl: "1 / 2 / 3 / 3",
-        }}
-      >
-        <CardHeader p="12px 5px" mb="12px">
-          <Text fontSize="lg" color="#fff" fontWeight="bold">
-            Search History
-          </Text>
-        </CardHeader>
-        <CardBody px="5px">
-          {searchHistory.length > 0 ? (
-            <SearchHistoryList history={searchHistory}   avatar={avatar} />
-          ) : (
-            <Text fontSize="sm" color="gray.400">
-              No search history available.
+        {/* Search History Card */}
+        <Card
+          p="16px"
+          maxW="100%"
+          gridArea={{
+            base: "2 / 1 / 3 / 2", // Second row on small screens
+            md: "2 / 1 / 3 / 2", // Second row and first column on medium screens
+            xl: "1 / 2 / 3 / 3", // First row and second column on large screens
+          }}
+          overflowX="auto" // Enable horizontal scrolling if content overflows
+        >
+          <CardHeader p="12px 5px" mb="12px">
+            <Text fontSize="lg" color="#fff" fontWeight="bold">
+              Search History
             </Text>
-          )}
-        </CardBody>
-      </Card>
+          </CardHeader>
+          <CardBody px="5px" minW="300px">
+            {" "}
+            {/* Ensure minimum width for the content */}
+            {searchHistory.length > 0 ? (
+              <SearchHistoryList history={searchHistory} avatar={avatar} />
+            ) : (
+              <Text fontSize="sm" color="gray.400">
+                No search history available.
+              </Text>
+            )}
+          </CardBody>
+        </Card>
 
         {/* Profile Information */}
         <Card
           p="16px"
           maxW="100%"
           gridArea={{
-            sm: "3 / 1 / 4 / 2",
-            xl: "2 / 1 / 3 / 2",
+            base: "3 / 1 / 4 / 2", // Third row on small screens
+            md: "1 / 2 / 3 / 3", // First and second rows and second column on medium screens
+            xl: "2 / 1 / 3 / 2", // Second row and first column on large screens
           }}
         >
           <CardHeader p="12px 5px" mb="12px">
