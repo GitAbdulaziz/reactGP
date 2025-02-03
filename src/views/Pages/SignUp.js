@@ -342,18 +342,37 @@ function SignUp() {
                   />
                 </GradientBorder>
                 <Button
-                  onClick={handleSignUp}
-                  variant="brand"
-                  fontSize="10px"
-                  type="submit"
-                  w="100%"
-                  maxW="350px"
-                  h="45"
-                  mb="20px"
-                  mt="20px"
-                >
-                  SIGN UP
-                </Button>
+  onClick={handleSignUp}
+  variant="brand"
+  fontSize="10px"
+  type="submit"
+  w="100%"
+  maxW="350px"
+  h="45"
+  mb="10px" // Reduce margin for spacing
+  mt="20px"
+>
+  SIGN UP
+</Button>
+
+{/* Continue as Visitor Button */}
+<Button
+  onClick={() => history.push("/search")} // Change to the route you want
+  variant="brand" // Makes it look different from "Sign Up"
+  fontSize="12px"
+  w="100%"
+  maxW="350px"
+  h="45"
+  color="white"
+  borderColor="white"
+  _hover={{ bg: "white", color: "black" }}
+  mt="10px"  mb="10px" // Reduce margin for spacing
+
+
+>
+  Continue as Visitor
+</Button>
+
 
                 {(error || success) && (
                   <Box
