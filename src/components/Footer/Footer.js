@@ -64,28 +64,8 @@ const FooterWithBlur = () => {
               From powerful search features to real-time analytics, BusinessMap
               offers the tools you need to grow and connect.
             </Text>
-            <Heading fontSize="lg" mt={6} mb={4}>
-              Follow Us
-            </Heading>
-            <Flex gap={2}>
-              {[FaFacebook, FaTwitter, FaPinterest, FaYoutube, FaLinkedin].map(
-                (IconComponent, index) => (
-                  <Link
-                    key={index}
-                    href="#"
-                    aria-label="Social Link"
-                    isExternal
-                  >
-                    <Icon
-                      as={IconComponent}
-                      boxSize={5}
-                      color="gray.500"
-                      _hover={{ color: "blue.300" }}
-                    />
-                  </Link>
-                )
-              )}
-            </Flex>
+            
+            
           </Box>
 
           {/* Useful Links */}
