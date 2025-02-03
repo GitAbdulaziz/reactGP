@@ -83,9 +83,8 @@ function Locations() {
       <Text
         as="span"
         textDecoration="underline"
-        color="teal.300"
+        color="blue.300"
         cursor="pointer"
-        onClick={() => history.push("/locations")} // Redirect to Locations page
       >
         {results.length} نتائج  ({selectedActivity})
       </Text>
