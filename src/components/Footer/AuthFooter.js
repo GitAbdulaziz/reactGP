@@ -36,30 +36,42 @@ export default function AuthFooter(props) {
         
       </Text>
       <List display='flex'>
-        <ListItem
-          me={{
-            base: "20px",
-          }}>
        
-        </ListItem>
-        <ListItem
-          me={{
-            base: "20px",
-          }}>
-          <Link color='white' fontSize='18px' href='https://www.rcrc.gov.sa/'>
-            {document.documentElement.dir === "rtl" ? "الهيئة الملكية بمدينة الرياض" : "الهيئة الملكية بمدينة الرياض"}
-          </Link>
-        </ListItem>
         
-        <ListItem>
-          <Link
-            color='white'
-            href="/home"
-            >
-            {document.documentElement.dir === "rtl" ? "الرئيسية" : "Home"}
-          </Link>
-        </ListItem>
-      </List>
+        
+       <ListItem>
+         <Link  me={{
+           base: "20px",
+           md: "44px",
+         }}
+           color='white'
+           href="/home">
+           {document.documentElement.dir === "rtl" ? "الرئيسية" : "Home"}
+         </Link>
+       </ListItem>
+
+       <ListItem
+         me={{
+           base: "20px",
+           md: "44px",
+
+         }}>
+         <Link color='white'  href='/about'>
+           {document.documentElement.dir === "rtl" ? "About" : "About"}
+         </Link>
+       </ListItem>
+
+       <ListItem
+         me={{
+           base: "20px",
+           md: "44px",
+
+         }}>
+         <Link color='white'  href='/contact'>
+           {document.documentElement.dir === "rtl" ? "Contact" : "Contact"}
+         </Link>
+       </ListItem>
+     </List>
     </Flex>
   );
 }
