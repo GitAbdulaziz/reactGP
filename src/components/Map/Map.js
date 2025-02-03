@@ -119,7 +119,7 @@ const Map = ({ center, results }) => {
       <GoogleMap
         mapContainerStyle={{
           width: "100%",
-          height: "800px",
+          height: "700px",
           borderRadius: "10px",
           marginTop: "50px",
         }}
