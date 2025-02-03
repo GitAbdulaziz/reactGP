@@ -38,27 +38,39 @@ export default function CopyRight(props) {
        
       </Text>
       <List display='flex'>
+       
+        
+        
+        <ListItem>
+          <Link  me={{
+            base: "20px",
+            md: "44px",
+          }}
+            color='white'
+            href="/home">
+            {document.documentElement.dir === "rtl" ? "الرئيسية" : "Home"}
+          </Link>
+        </ListItem>
+
         <ListItem
           me={{
             base: "20px",
             md: "44px",
+
           }}>
-          
+          <Link color='white' fontSize='17px' href='/about'>
+            {document.documentElement.dir === "rtl" ? "About" : "About"}
+          </Link>
         </ListItem>
+
         <ListItem
           me={{
             base: "20px",
+            md: "44px",
+
           }}>
-          <Link color='white' fontSize='17px' href='https://www.rcrc.gov.sa/'>
-            {document.documentElement.dir === "rtl" ? "الهيئة الملكية بمدينة الرياض" : "الهيئة الملكية بمدينة الرياض"}
-          </Link>
-        </ListItem>
-        
-        <ListItem>
-          <Link
-            color='white'
-            href="/home">
-            {document.documentElement.dir === "rtl" ? "الرئيسية" : "Home"}
+          <Link color='white' fontSize='17px' href='/contact'>
+            {document.documentElement.dir === "rtl" ? "Contact" : "Contact"}
           </Link>
         </ListItem>
       </List>
