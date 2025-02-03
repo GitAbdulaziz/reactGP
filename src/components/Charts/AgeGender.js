@@ -57,7 +57,7 @@ const AgeGender = () => {
 
   return (
     <Flex flexWrap="wrap" justifyContent="space-between" alignItems="center" p="20px">
-      <Box flex="1" width="100%" maxWidth="1000px" height="500px">
+      <Box flex="1" width="100%" maxWidth="1400px" height="500px">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={transformedData}
@@ -83,8 +83,9 @@ const AgeGender = () => {
             </defs>
 
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="ageGroup" interval={0} tick={{ angle: -30, dy: 10 }} />
-            <YAxis />
+            <XAxis dataKey="ageGroup" interval={0} tick={{ angle: -30, dy: 10,fill: "white" }} />
+            <YAxis tick={{ fill: "white" }} // Set tick color to white
+  stroke="white"  />
             <Tooltip content={<CustomTooltip />} />
             <Legend verticalAlign="bottom" height={36} wrapperStyle={{ marginBottom: -50 , color: "white"}} />
             {/* Bars with Neon Effect */}
