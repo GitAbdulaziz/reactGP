@@ -37,8 +37,17 @@ const HomePage = () => {
   const history = useHistory();
 
   const handleGetStarted = () => {
-    history.push("/search");
+    const hasClickedBefore = sessionStorage.getItem("firstClick");
+  
+    if (!hasClickedBefore) {
+      sessionStorage.setItem("firstClick", "true"); // Store the flag in sessionStorage
+      history.push("/auth/signup"); // Redirect to signup on the first click
+    } else {
+      history.push("/search"); // Redirect to search on subsequent clicks
+    }
   };
+  
+  
 
   return (
     <>
@@ -164,8 +173,8 @@ const HomePage = () => {
           </Box>
         </Flex>
       </Box>
-
-      {/* <WhiteSection />
+{/* 
+      <WhiteSection />
       <Overview /> */}
       <Footer />
     </>
